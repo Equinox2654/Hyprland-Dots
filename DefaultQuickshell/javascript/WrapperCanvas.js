@@ -46,9 +46,11 @@ function drawBluetooth(ctx, x, y, width, height) {
 
     addPoint(ctx, x + width, y, r, false, true, true, true)
 
-    addPoint(ctx, x + width, bottom, r, false, false, false, false)
+    addPoint(ctx, x + width, y + height, r, false, false, true, false)
 
-    ctx.lineTo(x, 1180)
+    addPoint(ctx, x, y + height, r, false, true, false, true)
+
+    ctx.lineTo(-1000, y)
 
     ctx.stroke()
 

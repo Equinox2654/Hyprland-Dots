@@ -16,7 +16,7 @@ PanelWindow {
     color: "transparent"
 
     property var moduleX: bluetoothRoot.x + module.x
-    property var moduleY: bluetoothRoot.y + module.y + module.rectHeight / 2 - 50
+    property var moduleY: bluetoothRoot.y + module.y + module.rectHeight / 2
 
     property bool isHovered: false
 
@@ -27,10 +27,10 @@ PanelWindow {
 	top: true
     }
 
-    property real originalWidth: 400
+    property real originalWidth: info.width + 10
 
     property real popupWidth: 0
-    property real popupHeight: 300
+    property real popupHeight: info.height
 
     mask: Region {
 	item: popupArea
@@ -74,7 +74,7 @@ PanelWindow {
 
 		ctx.reset()
 		
-		Logic.drawBluetooth(ctx, 0, popupArea.y, popupWidth, popupArea.height)
+		Logic.drawBluetooth(ctx, 0, popupArea.y, popupWidth, popupArea.height + 5)
 	    }
 	}
     }
@@ -102,11 +102,14 @@ PanelWindow {
 
 	ColumnLayout {
 	    id: info
-	    spacing: 20
+	    spacing: 10
+
 	    property bool enoughDevices: true
+	    property string currentSetting: "Devices"
+
 	    anchors.centerIn: parent
 
-	    Item { height: 20 }
+	    Item { height: 5 }
 
 	    Repeater {
 		model: {
@@ -123,8 +126,9 @@ PanelWindow {
 		}
 		Layout.alignment: Qt.alignBottom | Qt.alignHCenter
 		anchors.centerIn: parent
-		ColumnLayout {
+		RowLayout {
 		    property var device: Bluetooth.devices.values[index]
+		    visible: info.currentSetting == "Devices"
 		    spacing: 10
 		    Text {
 			text: {
@@ -173,6 +177,9 @@ PanelWindow {
 
 		}
 	    }
+
+	    Item { height: 5 }
+
 	}
 
 	Timer {
