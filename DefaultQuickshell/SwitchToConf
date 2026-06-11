@@ -1,0 +1,9 @@
+#!/bin/bash
+
+rm -r ~/.config/quickshell/*
+
+ln -s ~/Playground/DefaultQuickshell/components/ ~/.config/quickshell/components
+ln -s ~/Playground/DefaultQuickshell/javascript/ ~/.config/quickshell/javascript
+ln -s ~/Playground/DefaultQuickshell/widgets/ ~/.config/quickshell/widgets
+ln -s ~/Playground/DefaultQuickshell/popups/ ~/.config/quickshell/popups
+ln -s ~/Playground/DefaultQuickshell/shell.qml ~/.config/quickshell/shell.qml

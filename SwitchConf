@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ $1 = "Default" ]; then
+    ~/Playground/DefaultQuickshell/SwitchToConf
+    ~/Playground/Defaulthypr/SwitchToDefaultHypr
+fi
+
+killall -9 qs
+
+qs & disown
