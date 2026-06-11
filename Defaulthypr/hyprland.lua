@@ -140,15 +140,16 @@ hl.config({
 
 -- https://wiki.hypr.land/Configuring/Variables/#animations
 
-hl.config({
-    animations = {
-	enabled = true
-        -- Default curves, see https://wiki.hypr.land/Configuring/Animations/#curves
-        --        NAME,           X0,   Y0,   X1,   Y1
-        -- Default animations, see https://wiki.hypr.land/Configuring/Animations/
-        --           NAME,          ONOFF, SPEED, CURVE,        [STYLE]
-    },
+hl.curve("AnimBezier", {
+    type = "bezier",
+    points = { { 0.23, 1.0 }, { 0.32, 1.0 } }
 })
+
+hl.animation({ leaf = "workspaces", enabled = true, speed = 5, bezier = "AnimBezier", style = "slidevert" })
+hl.animation({ leaf = "workspacesOut", enabled = true, speed = 5, bezier = "AnimBezier", style = "slidevert" })
+hl.animation({ leaf = "workspacesIn", enabled = true, speed = 5, bezier = "AnimBezier", style = "slidevert" })
+
+hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 5, bezier = "AnimBezier", style = "slidevert" })
 
 -- Ref https://wiki.hypr.land/Configuring/Workspace-Rules/
 
