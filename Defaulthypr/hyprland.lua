@@ -45,10 +45,6 @@ local autostart = require("modules/autostart")
 
 -- See https://wiki.hypr.land/Configuring/Environment-variables/
 
-hl.env("XCURSOR_THEME", "Simp1e-Catppuccin-Mocha")
-
-hl.env("XCURSOR_SIZE", 30)
-
 --##################
 
 --## PERMISSIONS ###
@@ -150,6 +146,9 @@ hl.animation({ leaf = "workspacesOut", enabled = true, speed = 5, bezier = "Anim
 hl.animation({ leaf = "workspacesIn", enabled = true, speed = 5, bezier = "AnimBezier", style = "slidevert" })
 
 hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 5, bezier = "AnimBezier", style = "slidevert" })
+
+hl.animation({ leaf = "windows", enabled = true, speed = 5, bezier = "AnimBezier", style = "popin 60%" })
+hl.animation({ leaf = "fade", enabled = true, speed = 5, bezier = "AnimBezier"})
 
 -- Ref https://wiki.hypr.land/Configuring/Workspace-Rules/
 
